@@ -1,11 +1,13 @@
-# Allow build scripts to be referenced without being copied into the final image
+ARG IMAGE_NAME="bluefin"
+ARG IMAGE_VENDOR="ublue-os"# Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
 FROM ghcr.io/ublue-os/bluefin-dx:stable
 
-
+ARG IMAGE_NAME="personal"
+ARG IMAGE_VENDOR="Redpie16"
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
